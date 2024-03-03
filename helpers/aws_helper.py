@@ -4,6 +4,8 @@ import logging
 import geopandas as gpd
 from shapely.geometry import Polygon
 import time
+import gzip
+from io import StringIO
 
 class CityAwsHelper:
     def __init__(self, aws_config) -> None:        
@@ -142,9 +144,17 @@ class CityAwsHelper:
 
         return objects       
          
-    #todo: download file from the storage
     def download_file_from_bucket(self, bucket, file, path:str ='aws_downloads/'):
+        """download file from s3 bucket
 
+        Args:
+            bucket (str): name of s3 bucket
+            file (str): name of file to download
+            path (str, optional): file path. Defaults to 'aws_downloads/'.
+
+        Returns:
+            _type_: _description_
+        """
         files = self.list_files_in_bucket(bucket)
 
         if file in files:            
@@ -153,3 +163,29 @@ class CityAwsHelper:
         else:
             AssertionError(f'file {file} not in bucket": {bucket}')
             return False
+        
+    def extract_zipped_csv(self, path:str, file):
+        """extract csv from file and return dataframe 
+
+        Args:
+            path (str): path location
+            file (str): name of file in zip
+
+        Returns:
+            _type_: _description_
+        """
+        extension = self.get_file_exension(file)
+        if extension == 'gz':
+            with gzip.open(path + file, 'rb') as f:
+                data = f.read().decode('utf-8')
+
+            logging.warning('convert file to dataframe, remove unwanted columns and fillna in lat and long columns')
+            df = pd.read_csv(StringIO(data))   
+
+            if 'Unnamed: 0' in df.columns:             
+                df = df.drop(columns=['Unnamed: 0'])
+
+        else:
+            AssertionError(f'file {file} should be in zip with extension .gz')
+
+        return df
