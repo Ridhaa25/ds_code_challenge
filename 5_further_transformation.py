@@ -41,6 +41,24 @@ if __name__ == '__main__':
             
     df = cah.extract_zipped_csv(dowload_path, 'sr_hex.csv.gz')
 
+    #1. 
     #find bellville south centroid 
+    # investigate locations on where this data is located. 
+    # start with the city of cape town website
+
+
+    # Create a filter of existing data to compute location of center to bellville centroid
+    #filter all areas that are outside this regoin
+
+
+    #return dataset of filered arears
+
+    #2. #using the request package and 
+    #the URL: https://www.capetown.gov.za/_layouts/OpenDataPortalHandler/DownloadHandler.ashx?DocumentName=Wind_direction_and_speed_2020.ods&DatasetDocument=https%3A%2F%2Fcityapps.capetown.gov.za%2Fsites%2Fopendatacatalog%2FDocuments%2FWind%2FWind_direction_and_speed_2020.ods
+    # O will get the response and save the response in a file in the datasets file in this repository
+    #I will investigate the file and identify fields to join on and or filter out. 
+
+    #3. 
+    
     
         
