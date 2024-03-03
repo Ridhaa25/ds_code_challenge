@@ -143,3 +143,13 @@ class CityAwsHelper:
         return objects       
          
     #todo: download file from the storage
+    def download_file_from_bucket(self, bucket, file, path:str ='aws_downloads/'):
+
+        files = self.list_files_in_bucket(bucket)
+
+        if file in files:            
+            self.s3_client.download_file(bucket, file,path + file)
+            return True
+        else:
+            AssertionError(f'file {file} not in bucket": {bucket}')
+            return False

@@ -2,3 +2,4 @@ boto3==1.34.54
 pandas==2.2.0
 datacompy==0.11.0
 geopandas==0.14.3
+h3==3.7.6
