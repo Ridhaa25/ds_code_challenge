@@ -27,17 +27,32 @@ To run this file, execute the following command in the file location:
 `python 1_data_extraction.py`
 
 Output:
-Log file with the details of the run called: `python 1_data_extraction.log`
+Log file with the details of the run called: `1_data_extraction.log`
 
 issues:
-
+This script downloads the file from the s3 bucket as expected, however, on validation, we are seeing a slight mismatch of the most significant values in some of the records in the dataframe. This is due to parsing the file with a polygon function which changes these values. To remedy this, I aimed to ingest the data to a JSON format and then do the comparison. I was, however, unable to do this due to time constraints. however, the script works. 
 
 ### Activity 2: Data Transformation 
 To run this file, execute the following command in the file location:
 `python 2_data_transformation.py`
 
 Output:
-Log file with the details of the run called: `python 2_data_transformation.log`
+Log file with the details of the run called: `2_data_transformation.log`
 
+### Activity 3: Further Data Transformation
+To run this file, execute the following command in the file location:
+`python 5_further_transformation.py`
 
+Output:
+Log file with the details of the run called: `5_further_transformation.py.log`
 
+issues:
+I was unable to finish this activity, however, I have outlined the steps I would have followed in the script. 
+
+### To be added
+This is by no means the full solution, however, given to limitation of time, I was unable to complete some of the items that I would have added if I had more time. These are:
+* Validation of all the methods within the CityAwsHelper class.
+* Unit tests of all the methods in the CityAwsHelper class using the unittest framework within python
+* Removal of all downloaded files on completion of the script
+* Completion of validation of activity 1
+* Completion of activity 5
