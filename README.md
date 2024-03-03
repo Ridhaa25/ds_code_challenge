@@ -5,17 +5,17 @@ This repository outlines the steps taken to complete the various challenges for 
 
 ### Set up
 Before Running the various files, please follow the following steps to set up the environment:
-* Use a Python version uses 3.10.0 (Note this was developed on a windows 10 computer)
+* Use a Python version uses 3.10.0 (Note this was developed on a Windows 10 computer)
 * Clone or fork this repository
 * Set up a virtual environment by following the steps below:
 * cd into this directory
 * Run `python -m venv .venv`
-* Activate your environment if not activated by running ` . .\.venv\Scripts\activate`
-* Once activate add modules by running `pip install -r requirements.txt`
+* Activate your environment if not activated by running `. .\.venv\Scripts\activate`
+* Once activated add modules by running `pip install -r requirements.txt`
 * Your environment should now be ready to run the various scripts
 
 ### Structure of submission
-The script to be executed is labelled according to the headings in the readme file. Therefore:
+The script to be executed is labeled according to the headings in the readme file. Therefore:
 1. Data Extraction --> `1_data_extraction.py`
 2. Data Transformation --> `2_data_transformation.py`
 5. Further Data Transformation --> `5_further_transformation.py`
@@ -30,7 +30,7 @@ Output:
 Log file with the details of the run called: `1_data_extraction.log`
 
 issues:
-This script downloads the file from the s3 bucket as expected, however, on validation, we are seeing a slight mismatch of the most significant values in some of the records in the dataframe. This is due to parsing the file with a polygon function which changes these values. To remedy this, I aimed to ingest the data to a JSON format and then do the comparison. I was, however, unable to do this due to time constraints. however, the script works. 
+This script downloads the file from the s3 bucket as expected, however, on validation, we are seeing a slight mismatch of the most significant values in some of the records in the Dataframe. This is due to parsing the file with a polygon function which changes these values. To remedy this, I aimed to ingest the data into a JSON format and then do the comparison. I was, however, unable to do this due to time constraints. However, the script works. 
 
 ### Activity 2: Data Transformation 
 To run this file, execute the following command in the file location:
