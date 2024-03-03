@@ -14,7 +14,7 @@ aws_config  = {'access_key': 'AKIAYH57YDEWMHW2ESH2',
         
 cah = CityAwsHelper(aws_config)
 
-logging.basicConfig(format='%(asctime)s %(message)s',filename='Extraction_performance.log', encoding='utf-8', level=logging.INFO)
+logging.basicConfig(format='%(asctime)s %(message)s',filename='1_data_extraction.log', encoding='utf-8', level=logging.INFO)
 
 if __name__ == '__main__':
     logging.info('--------------------------------------------------')

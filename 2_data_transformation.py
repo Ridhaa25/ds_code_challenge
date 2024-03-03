@@ -9,8 +9,7 @@ import time
 
 start_time = time.time()
 
-logging.basicConfig(format='%(asctime)s %(message)s',filename='Transformation_performance.log', encoding='utf-8', level=logging.INFO)
-
+logging.basicConfig(format='%(asctime)s %(message)s',filename='2_data_transformation.log', encoding='utf-8', level=logging.INFO)
 
 aws_config  = {'access_key': 'AKIAYH57YDEWMHW2ESH2',
                 'secret_key': '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',
