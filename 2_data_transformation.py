@@ -77,7 +77,12 @@ if __name__ == '__main__':
     #approximately 900K a threshould of 0.5% would equate to approximately 4700 records 
     #Therefore, given the quality of the datasets and join, this is well within an allowable
     #error margin. 
-     
+    
+    logging.info(f'It was found that 3 records did not merge successfully. With the total dataset being 
+    approximately 900K a threshould of 0.5% would equate to approximately 4700 records 
+    Therefore, given the quality of the datasets and join, this is well within an allowable
+    error margin.')
+
     threshold = 0.5
     logging.info(f'Script error margin: {threshold}')
 
